@@ -1,0 +1,93 @@
+/* Abhinandini's brand tokens: copy into any project's global CSS */
+:root {
+  /* Brand */
+  --brand-blue: #3b82f6;
+  --brand-violet: #8b5cf6;
+  --brand-pink: #ec4899;
+  --brand-primary: #2563eb;
+  --brand-purple: #9333ea;
+  --brand-gradient: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  --brand-gradient-text: linear-gradient(90deg, #2563eb, #9333ea);
+  --brand-hero-wash: linear-gradient(135deg, #eff6ff, #faf5ff, #fdf2f8);
+
+  /* Neutrals */
+  --text: #111827;
+  --text-muted: #4b5563;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --border: #f3f4f6;
+
+  /* Status */
+  --success: #10b981;
+  --success-text: #047857;
+
+  /* Terminal */
+  --term-bg: #000000;
+  --term-border: #27272a;
+  --term-text: #4ade80;
+  --term-prompt: #60a5fa;
+  --term-heading: #facc15;
+  --term-error: #f87171;
+
+  /* Shape & motion */
+  --radius-card: 1rem;      /* rounded-2xl */
+  --radius-tile: 0.75rem;   /* rounded-xl  */
+  --radius-pill: 9999px;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 300ms;
+
+  /* Grid pattern (hero) */
+  --grid-line: rgb(0 0 0 / 0.1);
+  --grid-size: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --text: #ffffff;
+    --text-muted: #9ca3af;
+    --bg: #030712;
+    --surface: #111827;
+    --border: #1f2937;
+    --success-text: #34d399;
+    --brand-hero-wash: linear-gradient(135deg, rgb(23 37 84 / 0.2), rgb(59 7 100 / 0.2), rgb(80 7 36 / 0.2));
+    --grid-line: rgb(255 255 255 / 0.05);
+  }
+}
+.dark {
+  --text: #ffffff;
+  --text-muted: #9ca3af;
+  --bg: #030712;
+  --surface: #111827;
+  --border: #1f2937;
+  --success-text: #34d399;
+  --brand-hero-wash: linear-gradient(135deg, rgb(23 37 84 / 0.2), rgb(59 7 100 / 0.2), rgb(80 7 36 / 0.2));
+  --grid-line: rgb(255 255 255 / 0.05);
+}
+
+/* Utilities */
+.brand-gradient-text {
+  background: var(--brand-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand-grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+.brand-photo-frame {
+  padding: 3px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #2563eb, #9333ea, #ec4899);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
